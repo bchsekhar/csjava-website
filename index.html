@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChandraSekhar Baratam - Java Topics</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: grid;
+      grid-template-areas:
+        'header header header'
+        'menu content content'
+        'footer footer footer';
+      grid-template-columns: 200px 1fr;
+      grid-template-rows: 60px 1fr 40px;
+      height: 100vh;
+      background: #f0f2f5;
+    }
+    header {
+      grid-area: header;
+      background: #2c3e50;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    header h1 {
+      display: inline-block;
+      animation: scrollText 10s linear infinite;
+    }
+    @keyframes scrollText {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    nav {
+      grid-area: menu;
+      background: #34495e;
+      padding: 20px;
+      color: white;
+    }
+    nav a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin: 10px 0;
+      padding: 8px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: #1abc9c;
+    }
+    main {
+      grid-area: content;
+      padding: 20px;
+      background: white;
+      border-left: 2px solid #ccc;
+    }
+    footer {
+      grid-area: footer;
+      background: #2c3e50;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ChandraSekhar Baratam</h1>
+  </header>
+
+  <nav>
+    <a href="#" onclick="loadTopic('Introduction to Java')">Introduction to Java</a>
+    <a href="#" onclick="loadTopic('OOP Concepts')">OOP Concepts</a>
+    <a href="#" onclick="loadTopic('Exception Handling')">Exception Handling</a>
+    <a href="#" onclick="loadTopic('Collections Framework')">Collections Framework</a>
+    <a href="#" onclick="loadTopic('Multithreading')">Multithreading</a>
+    <a href="#" onclick="loadTopic('JDBC')">JDBC</a>
+    <a href="#" onclick="loadTopic('Java 8 Features')">Java 8 Features</a>
+  </nav>
+
+  <main id="content">
+    <h2>Welcome to Java Topics</h2>
+    <p>Select a topic from the menu to view content here.</p>
+  </main>
+
+  <footer>
+    <p>&copy; csjava</p>
+  </footer>
+
+  <script>
+    function loadTopic(topic) {
+      const content = document.getElementById('content');
+      content.innerHTML = `<h2>${topic}</h2><p>Details about <strong>${topic}</strong> will appear here.</p>`;
+    }
+  </script>
+</body>
+</html>
