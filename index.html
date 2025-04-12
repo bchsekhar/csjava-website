@@ -1,108 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChandraSekhar Baratam - Java Topics</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: grid;
-      grid-template-areas:
-        'header header header'
-        'menu content content'
-        'footer footer footer';
-      grid-template-columns: 200px 1fr;
-      grid-template-rows: 60px 1fr 40px;
-      height: 100vh;
-      background: #f0f2f5;
-    }
-    header {
-      grid-area: header;
-      background: #2c3e50;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-    header h1 {
-      display: inline-block;
-      animation: scrollText 10s linear infinite;
-    }
-    @keyframes scrollText {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-    nav {
-      grid-area: menu;
-      background: #34495e;
-      padding: 20px;
-      color: white;
-    }
-    nav a {
-      display: block;
-      color: white;
-      text-decoration: none;
-      margin: 10px 0;
-      padding: 8px;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-    nav a:hover {
-      background: #1abc9c;
-    }
-    main {
-      grid-area: content;
-      padding: 20px;
-      background: white;
-      border-left: 2px solid #ccc;
-    }
-    footer {
-      grid-area: footer;
-      background: #2c3e50;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Background image only for index page */
+        body.index-page {
+            background-image: url('images/background.jpg'); /* Your image */
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            height: 100vh; /* Full page height */
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        /* Style the content */
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%; /* Full height */
+            text-align: center;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+        
+        /* Optional: Add a semi-transparent overlay */
+        body.index-page::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 0; /* Ensures the overlay stays behind the text */
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>ChandraSekhar Baratam</h1>
-  </header>
 
-  <nav>
-    <a href="#" onclick="loadTopic('Introduction to Java')">Introduction to Java</a>
-    <a href="#" onclick="loadTopic('OOP Concepts')">OOP Concepts</a>
-    <a href="#" onclick="loadTopic('Exception Handling')">Exception Handling</a>
-    <a href="#" onclick="loadTopic('Collections Framework')">Collections Framework</a>
-    <a href="#" onclick="loadTopic('Multithreading')">Multithreading</a>
-    <a href="#" onclick="loadTopic('JDBC')">JDBC</a>
-    <a href="#" onclick="loadTopic('Java 8 Features')">Java 8 Features</a>
-  </nav>
-
-  <main id="content">
-    <h2>Welcome to Java Topics</h2>
-    <p>Select a topic from the menu to view content here.</p>
-  </main>
-
-  <footer>
-    <p>&copy; csjava</p>
-  </footer>
-
-  <script>
-    function loadTopic(topic) {
-      const content = document.getElementById('content');
-      content.innerHTML = `<h2>${topic}</h2><p>Details about <strong>${topic}</strong> will appear here.</p>`;
-    }
-  </script>
+<body class="index-page">
+    <!-- Main content area -->
+    <div class="content">
+        <h1>Welcome to My Website</h1>
+        <p>This is my homepage with a background image.</p>
+        <!-- Add other sections or content as needed -->
+    </div>
 </body>
+
 </html>
