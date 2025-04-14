@@ -1,15 +1,105 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Contact@9346435866</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.hero img {
+  width: 600px;
+  height: auto;
+  border-radius: 15px;
+  border: 4px solid #1e90ff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: float 3s ease-in-out infinite, pulseGlow 2s infinite;
+}
+
+/* Zoom on hover */
+.hero img:hover {
+  transform: scale(1.05) translateY(-10px);
+  box-shadow: 0 8px 20px rgba(30, 144, 255, 0.7);
+}
+
+/* Floating effect */
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Pulse Glow Effect */
+@keyframes pulseGlow {
+  0%   { box-shadow: 0 0 10px rgba(30, 144, 255, 0.4); }
+  50%  { box-shadow: 0 0 25px rgba(30, 144, 255, 0.8); }
+  100% { box-shadow: 0 0 10px rgba(30, 144, 255, 0.4); }
+}
+
+/* Wobble effect on hover */
+.hero img:hover {
+  animation: wobble 0.8s ease;
+}
+
+@keyframes wobble {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  50% { transform: rotate(-3deg); }
+  75% { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Shimmer effect */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero img {
+  position: relative;
+  z-index: 1;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  transform: skewX(-25deg);
+  animation: shimmer 2.5s infinite;
+  z-index: 2;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+  </style>
 </head>
 <body>
 
   <header>
-    <h1 class="scrolling-text">This site is under development </h1>
+    <h1>ChandraSekhar Baratam</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -20,15 +110,20 @@
     </nav>
   </header>
 
-<div class="hero" style="display: flex; align-items: center; gap: 20px;">
-  <img src="images\cs.png" alt="Profile Image" style="width: 200px; height: auto; border-radius: 10px;">
-  <div>
-    <h1>Empowering Teams with Java Expertise</h1>
-    <p>Over 15 years of experience in Java, J2EE, Spring &amp; Front‑end training for national &amp; international clients.</p>
-    <a href="slides.html"><button>Explore Slides</button></a>
+  <div class="hero" style="display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+    <div>
+      <h1>Empowering Teams with Java Expertise</h1>
+      <p>Over 15 years of experience in Java, J2EE, Spring &amp; Front‑end training for national &amp; international clients.</p>
+      <a href="slides.html"><button>Explore Slides</button></a>
+    </div>
+    <img src="images/cs.png" alt="Profile Image" style="
+      width: 400px;
+      height: auto;
+      border-radius: 15px;
+      border: 4px solid #1e90ff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    ">
   </div>
-</div>
-
 
   <footer>
     &copy; 2025 ChandraSekhar Baratam. All rights reserved.
