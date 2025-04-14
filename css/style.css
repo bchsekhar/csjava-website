@@ -9,6 +9,17 @@ body {
   line-height: 1.6;
   color: #333;
 }
+
+
+.indexbody{
+
+
+  background-image: url('images/cs.png');
+    background-size: contain; /* Ensures the image fits within the container */
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -141,6 +152,8 @@ body {
     font-family: Arial, sans-serif;
 }
 */
+
+
 /* Styling for the header */
 header {
     background-color: rgba(0, 0, 0, 0.6);  /* Dark background for readability */
