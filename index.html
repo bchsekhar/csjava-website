@@ -6,110 +6,135 @@
   <link rel="stylesheet" href="css/style.css">
   <style>
 
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-.hero img {
-  width: 600px;
-  height: auto;
-  border-radius: 15px;
-  border: 4px solid #1e90ff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  animation: float 3s ease-in-out infinite, pulseGlow 2s infinite;
-}
+    .hero img {
+      width: 600px;
+      height: auto;
+      border-radius: 15px;
+      border: 4px solid #1e90ff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: float 3s ease-in-out infinite, pulseGlow 2s infinite;
+    }
 
-/* Zoom on hover */
-.hero img:hover {
-  transform: scale(1.05) translateY(-10px);
-  box-shadow: 0 8px 20px rgba(30, 144, 255, 0.7);
-}
+    /* Zoom on hover */
+    .hero img:hover {
+      transform: scale(1.05) translateY(-10px);
+      box-shadow: 0 8px 20px rgba(30, 144, 255, 0.7);
+    }
 
-/* Floating effect */
-@keyframes float {
-  0%   { transform: translateY(0px); }
-  50%  { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
+    /* Floating effect */
+    @keyframes float {
+      0%   { transform: translateY(0px); }
+      50%  { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
 
-/* Pulse Glow Effect */
-@keyframes pulseGlow {
-  0%   { box-shadow: 0 0 10px rgba(30, 144, 255, 0.4); }
-  50%  { box-shadow: 0 0 25px rgba(30, 144, 255, 0.8); }
-  100% { box-shadow: 0 0 10px rgba(30, 144, 255, 0.4); }
-}
+    /* Pulse Glow Effect */
+    @keyframes pulseGlow {
+      0%   { box-shadow: 0 0 10px rgba(30, 144, 255, 0.4); }
+      50%  { box-shadow: 0 0 25px rgba(30, 144, 255, 0.8); }
+      100% { box-shadow: 0 0 10px rgba(30, 144, 255, 0.4); }
+    }
 
-/* Wobble effect on hover */
-.hero img:hover {
-  animation: wobble 0.8s ease;
-}
+    /* Wobble effect on hover */
+    .hero img:hover {
+      animation: wobble 0.8s ease;
+    }
 
-@keyframes wobble {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(3deg); }
-  50% { transform: rotate(-3deg); }
-  75% { transform: rotate(2deg); }
-  100% { transform: rotate(0deg); }
-}
+    @keyframes wobble {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(3deg); }
+      50% { transform: rotate(-3deg); }
+      75% { transform: rotate(2deg); }
+      100% { transform: rotate(0deg); }
+    }
 
-/* Shimmer effect */
-.hero {
-  position: relative;
-  overflow: hidden;
-}
+    /* Shimmer effect */
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
 
-.hero img {
-  position: relative;
-  z-index: 1;
-}
+    .hero img {
+      position: relative;
+      z-index: 1;
+    }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.4) 50%,
-    rgba(255, 255, 255, 0.1) 100%
-  );
-  transform: skewX(-25deg);
-  animation: shimmer 2.5s infinite;
-  z-index: 2;
-}
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0.1) 100%
+      );
+      transform: skewX(-25deg);
+      animation: shimmer 2.5s infinite;
+      z-index: 2;
+    }
 
-@keyframes shimmer {
-  0% {
-    left: -75%;
-  }
-  100% {
-    left: 125%;
-  }
-}
-.head {
-  font-size: 3rem;
-  white-space: nowrap; /* Prevent the text from wrapping */
-  overflow: hidden; /* Hide the extra text that is out of view */
-  display: inline-block; /* Make the text block behave like inline */
-  animation: marquee 10s linear infinite; /* Animation name, duration, timing, and loop */
-}
+    @keyframes shimmer {
+      0% {
+        left: -75%;
+      }
+      100% {
+        left: 125%;
+      }
+    }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(100%); /* Start from the right side */
-  }
-  100% {
-    transform: translateX(-100%); /* Move to the left side */
-  }
-}
+    .head {
+      font-size: 3rem;
+      white-space: nowrap; /* Prevent the text from wrapping */
+      overflow: hidden; /* Hide the extra text that is out of view */
+      display: inline-block; /* Make the text block behave like inline */
+      animation: marquee 10s linear infinite; /* Animation name, duration, timing, and loop */
+    }
 
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%); /* Start from the right side */
+      }
+      100% {
+        transform: translateX(-100%); /* Move to the left side */
+      }
+    }
+
+    /* Centering header and nav */
+    header {
+      display: flex;
+      flex-direction: column;  /* Stack the header content */
+      align-items: center;     /* Center the nav items horizontally */
+      justify-content: center; /* Center the nav items vertically */
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;  /* Adjust space between links */
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 1.5rem;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #1e90ff;
+    }
 
   </style>
 </head>
@@ -133,13 +158,7 @@
       <p>Over 15 years of experience in Java, J2EE, Spring &amp; Front‑end training for national &amp; international clients.</p>
       <a href="slides.html"><button>Explore Slides</button></a>
     </div>
-    <img src="images/cs.png" alt="Profile Image" style="
-      width: 400px;
-      height: auto;
-      border-radius: 15px;
-      border: 4px solid #1e90ff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    ">
+    <img src="images/cs.png" alt="Profile Image" style="width: 400px; height: auto; border-radius: 15px; border: 4px solid #1e90ff; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);">
   </div>
 
   <footer>
