@@ -93,13 +93,30 @@
     left: 125%;
   }
 }
+.head {
+  font-size: 3rem;
+  white-space: nowrap; /* Prevent the text from wrapping */
+  overflow: hidden; /* Hide the extra text that is out of view */
+  display: inline-block; /* Make the text block behave like inline */
+  animation: marquee 10s linear infinite; /* Animation name, duration, timing, and loop */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%); /* Start from the right side */
+  }
+  100% {
+    transform: translateX(-100%); /* Move to the left side */
+  }
+}
+
 
   </style>
 </head>
 <body>
 
   <header>
-    <h1>ChandraSekhar Baratam</h1>
+    <h1 class="head">This site is under development</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
