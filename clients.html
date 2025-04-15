@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Trusted Clients</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -12,32 +12,22 @@
       padding: 0;
     }
 
-    .heading1 {
-      text-align: center;
-      font-size: 1.5rem;
-      margin-top: 50px;
-      color: #469ce2;
-      user-select: none;
-    }
-
     .heading {
       text-align: center;
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-top: 50px;
-      color: #e1dee0;
-      cursor: pointer;
-      user-select: none;
+      color: #333;
     }
 
     .clients-table {
       width: 70%;
-      margin: 30px auto;
+      margin: 50px auto;
       border-collapse: collapse;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       background-color: #ffffff;
       border-radius: 10px;
       overflow: hidden;
-      display: none;
+      transition: all 0.3s ease;
     }
 
     .clients-table th,
@@ -52,27 +42,95 @@
     .clients-table th {
       background-color: #1e90ff;
       color: white;
+      font-weight: bold;
       text-transform: uppercase;
     }
 
+    .clients-table td {
+      background-color: #fafafa;
+    }
+
     .clients-table tr:nth-child(even) td {
-      background-color: #f1f1f1;
+      background-color: #f1f1f1; /* Light gray for even rows */
     }
 
     .clients-table tr:hover {
-      background-color: #e2f0ff;
-      transform: scale(1.02);
+      background-color: #e2f0ff; /* Light blue background on row hover */
+      transform: scale(1.03);
       transition: all 0.3s ease;
     }
+
+    .clients-table td a {
+      text-decoration: none;
+      color: #1e90ff;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .clients-table td a:hover {
+      color: #333;
+    }
+
+    .clients-table td {
+      position: relative;
+    }
+
+    .clients-table td::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(30, 144, 255, 0.1);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      opacity: 0;
+    }
+
+    .clients-table td:hover::after {
+      opacity: 1;
+    }
+    header {
+  display: flex;
+  flex-direction: column;  /* Stack the header content */
+  align-items: center;     /* Center the nav items horizontally */
+  justify-content: center; /* Center the nav items vertically */
+}
+
+nav {
+  display: flex;
+  gap: 20px;  /* Adjust space between links */
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #1e90ff;
+}
+
   </style>
 </head>
 <body>
-  <div class="heading1">
+  <header>
+    <h1 class="head">This site is under development</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="slides.html">Slides</a>
+      <a href="memories.html">Memories</a>
+      <a href="clients.html">Clients</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <div class="heading">
     <h2>Trusted by Leading Clients</h2>
-  </div>
-
-  <div class="heading" id="toggle-clients">
-    <h2><span id="toggle-text">Show Clients</span></h2>
   </div>
 
   <table class="clients-table">
@@ -82,53 +140,50 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td>Cognizant</td></tr>
-      <tr><td>Wipro</td></tr>
-      <tr><td>Polaris / Virtusa</td></tr>
-      <tr><td>Tech Mahindra</td></tr>
-      <tr><td>Capgemini</td></tr>
-      <tr><td>HCLTech</td></tr>
-      <tr><td>CBCTech (Colombo)</td></tr>
-      <tr><td>Accenture (Singapore)</td></tr>
-      <tr><td>Optum</td></tr>
-      <tr><td>CSC</td></tr>
-      <tr><td>Gensor</td></tr>
-      <tr><td>Verizon</td></tr>
-      <tr><td>NCGR(Saudi Arabia)</td></tr>
-      <tr><td>Robert Bosch</td></tr>
-      <tr><td>L&W</td></tr>
-      <tr><td>NatWest</td></tr>
-      <tr><td>The Single Point</td></tr>
-      <tr><td>LPU</td></tr>
+      <tr>
+        <td>Cognizant</td>
+      </tr>
+      <tr>
+        <td>Wipro</td>
+      </tr>
+      <tr>
+        <td>Polaris / Virtusa</td>
+      </tr>
+      <tr>
+        <td>Tech Mahindra</td>
+      </tr>
+      <tr>
+        <td>Capgemini</td>
+      </tr>
+      <tr>
+        <td>HCL</td>
+      </tr>
+      <tr>
+        <td>CBCTech (Colombo)</td>
+      </tr>
+      <tr>
+        <td>Accenture (Singapore)</td>
+      </tr>
+      <tr>
+        <td>Optum</td>
+      </tr>
+      <tr>
+        <td>Verizon</td>
+      </tr>
+      <tr>
+        <td>NCGR(Saudi Arabia)</td>
+      </tr>
+      <tr>
+        <td>Robert Bosch</td>
+      </tr>
+      <tr>
+        <td>L&W</td>
+      </tr>
+      <tr>
+        <td>NatWest</td>
+      </tr>
     </tbody>
   </table>
 
-  <script>
-    $(document).ready(function () {
-      let isVisible = false;
-      let timer;
-
-      $('#toggle-clients').click(function () {
-        if (!isVisible) {
-          $('.clients-table').slideDown(4000); // slide down (top to bottom)
-          $('#toggle-text').text('Hide Clients');
-          isVisible = true;
-
-          // Auto hide after 5 seconds
-          timer = setTimeout(function () {
-            $('.clients-table').slideUp(40000); // slide up
-            $('#toggle-text').text('Show Clients');
-            isVisible = false;
-          }, 5000);
-
-        } else {
-          clearTimeout(timer); // stop the timer if hiding early
-          $('.clients-table').slideUp(10);
-          $('#toggle-text').text('Show Clients');
-          isVisible = false;
-        }
-      });
-    });
-  </script>
 </body>
 </html>
