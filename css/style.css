@@ -170,32 +170,6 @@ body {
 
 
 /* Styling for the header */
-header {
-  background: #004466;
-  color: #fff;
-  padding: 1em 2em;
-  text-align: center; /* 💡 This centers heading and nav */
-}
-
-header .head {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-header nav {
-  margin-top: 0.5em;
-}
-
-header nav a {
-  margin: 0 1em; /* Equal spacing on left and right */
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-header nav a:hover {
-  text-decoration: underline;
-}
 
 /* Hero Section Styling */
 .hero {
