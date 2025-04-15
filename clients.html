@@ -12,22 +12,68 @@
       padding: 0;
     }
 
+    header {
+      background: #004466;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+    }
+
+    header nav {
+      margin-top: 0.5em;
+    }
+
+    header nav a {
+      margin: 0 1em;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     .heading {
       text-align: center;
       font-size: 2.5rem;
-      margin-top: 50px;
-      color: #333;
+      margin-top: 30px;
+      color: rgb(134, 142, 227);
+    }
+
+    .toggle-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #004466;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background-color: #006699;
+    }
+
+    #clients-container {
+      transform-origin: top center;
+      transform: scaleY(1);
+      transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+      opacity: 1;
+    }
+
+    #clients-container.hide {
+      transform: scaleY(0);
+      opacity: 0;
     }
 
     .clients-table {
       width: 70%;
-      margin: 50px auto;
+      margin: 30px auto;
       border-collapse: collapse;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       background-color: #ffffff;
       border-radius: 10px;
       overflow: hidden;
-      transition: all 0.3s ease;
     }
 
     .clients-table th,
@@ -40,62 +86,25 @@
     }
 
     .clients-table th {
-      background-color: #1e90ff;
-      color: white;
+      background-color: silver;
+      color: black;
       font-weight: bold;
       text-transform: uppercase;
     }
 
-    .clients-table td {
-      background-color: #fafafa;
-    }
-
     .clients-table tr:nth-child(even) td {
-      background-color: #f1f1f1; /* Light gray for even rows */
+      background-color: #f1f1f1;
     }
 
     .clients-table tr:hover {
-      background-color: #e2f0ff; /* Light blue background on row hover */
-      transform: scale(1.03);
+      background-color: #e2f0ff;
+      transform: scale(1.02);
       transition: all 0.3s ease;
     }
-
-    .clients-table td a {
-      text-decoration: none;
-      color: #1e90ff;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    .clients-table td a:hover {
-      color: #333;
-    }
-
-    .clients-table td {
-      position: relative;
-    }
-
-    .clients-table td::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(30, 144, 255, 0.1);
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      opacity: 0;
-    }
-
-    .clients-table td:hover::after {
-      opacity: 1;
-    }
-   
-
   </style>
 </head>
 <body>
+
   <header>
     <h1 class="head">This site is under development</h1>
     <nav>
@@ -107,61 +116,43 @@
       <a href="contact.html">Contact</a>
     </nav>
   </header>
+
   <div class="heading">
     <h2>Trusted by Leading Clients</h2>
   </div>
 
-  <table class="clients-table">
-    <thead>
-      <tr>
-        <th>Client Name</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Cognizant</td>
-      </tr>
-      <tr>
-        <td>Wipro</td>
-      </tr>
-      <tr>
-        <td>Polaris / Virtusa</td>
-      </tr>
-      <tr>
-        <td>Tech Mahindra</td>
-      </tr>
-      <tr>
-        <td>Capgemini</td>
-      </tr>
-      <tr>
-        <td>HCL</td>
-      </tr>
-      <tr>
-        <td>CBCTech (Colombo)</td>
-      </tr>
-      <tr>
-        <td>Accenture (Singapore)</td>
-      </tr>
-      <tr>
-        <td>Optum</td>
-      </tr>
-      <tr>
-        <td>Verizon</td>
-      </tr>
-      <tr>
-        <td>NCGR(Saudi Arabia)</td>
-      </tr>
-      <tr>
-        <td>Robert Bosch</td>
-      </tr>
-      <tr>
-        <td>L&W</td>
-      </tr>
-      <tr>
-        <td>NatWest</td>
-      </tr>
-    </tbody>
-  </table>
+  <button class="toggle-btn" onclick="toggleTable()">Show/Hide Clients</button>
+
+  <div id="clients-container">
+    <table class="clients-table">
+      <thead>
+        <tr><th>Client Name</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Cognizant</td></tr>
+        <tr><td>Wipro</td></tr>
+        <tr><td>Polaris / Virtusa</td></tr>
+        <tr><td>Tech Mahindra</td></tr>
+        <tr><td>Capgemini</td></tr>
+        <tr><td>HCL</td></tr>
+        <tr><td>CBCTech (Colombo)</td></tr>
+        <tr><td>Accenture (Singapore)</td></tr>
+        <tr><td>Optum</td></tr>
+        <tr><td>Verizon</td></tr>
+        <tr><td>NCGR (Saudi Arabia)</td></tr>
+        <tr><td>Robert Bosch</td></tr>
+        <tr><td>L&W</td></tr>
+        <tr><td>NatWest</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function toggleTable() {
+      const container = document.getElementById('clients-container');
+      container.classList.toggle('hide');
+    }
+  </script>
 
 </body>
 </html>
