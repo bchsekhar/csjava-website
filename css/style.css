@@ -45,22 +45,24 @@ img {
 }
 
 /* Header & nav */
-header {
-  background: #004466;
-  color: #fff;
-  padding: 1em 2em;
-}
-header nav {
-  margin-top: 0.5em;
-}
-header nav a {
-  margin-right: 1.2em;
-  color: #fff;
-  font-weight: bold;
-}
-header nav a:hover {
-  text-decoration: underline;
-}
+  header {
+      background: #004466;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+    }
+
+    header nav {
+      margin-top: 0.5em;
+    }
+
+    header nav a {
+      margin: 0 1em;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
 
 /* Hero */
 .hero {
