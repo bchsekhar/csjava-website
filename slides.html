@@ -73,8 +73,8 @@
           <td><a href="/PPTS/CSS.pptx">CSS</a></td>
           <td><a href="/PPTS/newHTML.pptx">HTML</a></td>
           <td><a href="/PPTS/JavaScript.pptx">JavaScript</a></td>
-          <td><a href="/PPTS/newHTML.pptx">TypeScript</a></td>
-          <td><a href="/PPTS/JavaScript.pptx">Angular</a></td>
+          <td><a href="/PPTS/newHTML.pptx">TypeScript(not available)</a></td>
+          <td><a href="/PPTS/JavaScript.pptx">Angular(not available)</a></td>
         </tr>
     
         <!-- Next rows: 5 PDF links each -->
@@ -123,11 +123,17 @@
     </div>
   </section>
   
-  <script>
-    function loadPDF(pdfPath) {
-      document.getElementById("viewerFrame").src = pdfPath + "#toolbar=0&navpanes=0&scrollbar=0";
-    }
-  </script>
+ <script>
+  function loadPDF(pdfPath) {
+    // Load PDF in iframe
+    document.getElementById("viewerFrame").src = pdfPath + "#toolbar=0&navpanes=0&scrollbar=0";
+
+    // Scroll to the viewer frame smoothly
+    const viewer = document.getElementById("pdfViewer");
+    viewer.scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+
   
   
 
