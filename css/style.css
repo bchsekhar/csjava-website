@@ -218,3 +218,40 @@ footer {
     color: white;
 }
 
+.scroll-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.scroll-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 50s linear infinite;
+}
+
+.scroll-container:hover .scroll-track {
+  animation-play-state: paused;
+}
+
+.memory {
+  flex: 0 0 auto;
+  margin: 0 20px;
+  text-align: center;
+}
+
+.memory img {
+  width: 400px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
