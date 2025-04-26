@@ -95,12 +95,13 @@
     }
 
     .head {
-      font-size: 2rem;
-      white-space: nowrap; /* Prevent the text from wrapping */
-      overflow: hidden; /* Hide the extra text that is out of view */
-      display: inline-block; /* Make the text block behave like inline */
-      animation: marquee 30s linear infinite; /* Animation name, duration, timing, and loop */
-    }
+  font-size: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean and modern font */
+  white-space: nowrap;       /* Prevent the text from wrapping */
+  overflow: hidden;          /* Hide overflowing text */
+  display: inline-block;     /* Keep it inline */
+  animation: marquee 45s linear infinite; /* Slowed down from 30s to 45s */
+}
 
     @keyframes marquee {
       0% {
