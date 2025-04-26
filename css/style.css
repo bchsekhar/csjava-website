@@ -247,7 +247,7 @@ footer {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 .memory:hover img {
-  transform: scale(2.5);  /* Scale image up to 1.2 times its size on hover */
+  transform: scale(1.9);  /* Scale image up to 1.2 times its size on hover */
 }
 @keyframes scroll-left {
   0% {
