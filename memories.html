@@ -4,6 +4,34 @@
   <meta charset="UTF-8">
   <title>Memories | ChandraSekhar Baratam</title>
   <link rel="stylesheet" href="css/style.css">
+<style>
+    .marquee-container {
+      width: 100%; /* Full width of the container */
+      overflow: hidden; /* Hide content outside the container */
+    }
+
+    .marquee {
+      display: inline-block;
+      white-space: nowrap;
+      padding-left: 100%; /* Start fully off the right */
+      animation: marquee 20s linear infinite;
+    }
+
+    .marquee img {
+      height: 100px; /* Set the image height (or adjust as needed) */
+      margin-right: 20px; /* Space between images */
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%); /* Start at the far right */
+      }
+      100% {
+        transform: translateX(-100%); /* End at the far left */
+      }
+    }
+  </style>
+  
 </head>
 <body>
 
