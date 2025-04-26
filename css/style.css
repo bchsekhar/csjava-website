@@ -242,13 +242,13 @@ footer {
 }
 
 .memory img {
-  width: 400px;
+  width: 200px;
   height: auto;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 .memory:hover img {
-  transform: scale(1.9);  /* Scale image up to 1.2 times its size on hover */
+  transform: scale(1.3);  /* Scale image up to 1.2 times its size on hover */
 }
 @keyframes scroll-left {
   0% {
