@@ -228,7 +228,7 @@ footer {
 .scroll-track {
   display: flex;
   width: max-content;
-  animation: scroll-left 50s linear infinite;
+  animation: scroll-left 30s linear infinite;
 }
 
 .scroll-container:hover .scroll-track {
@@ -242,7 +242,7 @@ footer {
 }
 
 .memory img {
-  width: 200px;
+  width: 100px;
   height: auto;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
