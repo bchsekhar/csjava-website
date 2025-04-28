@@ -14,7 +14,7 @@ body {
   overflow-x: hidden;
 }
 
-.header {
+header {
   text-align: center;
   padding: 30px 0 10px;
   font-size: 36px;
