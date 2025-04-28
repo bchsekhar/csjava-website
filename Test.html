@@ -2,82 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Memories | ChandraSekhar Baratam</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Home | ChandraSekhar Baratam</title>
   <style>
-    .gallery {
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-
-    .scroll-container {
-      overflow-x: auto;
-    }
-
-    .scroll-track {
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
       display: flex;
-      flex-wrap: nowrap;
-      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to bottom right, #f0f2f5, #c9d6ff);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    .memory {
-      display: inline-block;
+    .center-content {
       text-align: center;
     }
 
-    .memory img {
-      width: 200px;
-      height: auto;
-      border-radius: 8px;
+    .center-content img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      animation: pop 1s ease;
+    }
+
+    .center-content h1 {
+      margin-top: 20px;
+      color: #0a66c2;
+      font-size: 32px;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Training Memories</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="slides.html">Slides</a>
-      <a href="memories.html">Memories</a>
-      <a href="clients.html">Clients</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <section class="gallery">
-    <h2 class="section-title">Moments from Workshops</h2>
-    <div class="scroll-container">
-      <div class="scroll-track" id="memoryTrack">
-        <!-- Memory items will be shuffled via JS -->
-        <div class="memory"><img src="images/10YearsTrainingPics/video/memory1.jpg" alt="Workshop 1"><p>Java Hands‑on Lab (Jan 2025)</p></div>
-        <div class="memory"><img src="images/10YearsTrainingPics/video/memory2.jpg" alt="Workshop 2"><p>Spring Boot Workshop (Mar 2025)</p></div>
-        <div class="memory"><img src="images/10YearsTrainingPics/video/memory3.jpg" alt="Workshop 3"><p>Java Hands‑on Lab</p></div>
-        <!-- Add all your other memory divs here as you have them... -->
-        <div class="memory"><img src="images/10YearsTrainingPics/video/memory23.jpg" alt="Workshop"><p>Spring Boot Workshop</p></div>
-        <div class="memory"><img src="images/10YearsTrainingPics/20140221_162758.jpg" alt="Workshop"><p>Spring Boot Workshop</p></div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 ChandraSekhar Baratam.
-  </footer>
-
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const track = document.getElementById('memoryTrack');
-      const items = Array.from(track.children);
-      const shuffled = items
-        .map(value => ({ value, sort: Math.random() }))
-        .sort((a, b) => a.sort - b.sort)
-        .map(({ value }) => value);
-
-      track.innerHTML = '';
-      shuffled.forEach(item => track.appendChild(item));
-    });
-  </script>
+<div class="center-content">
+  <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Java Logo">
+  <h1>Welcome to Java World</h1>
+</div>
 
 </body>
 </html>
