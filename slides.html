@@ -1,309 +1,147 @@
-/* Base Reset 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Slides | ChandraSekhar Baratam</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      margin: 20px;
+    }
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-  overflow-x: hidden;
-}
+    h6 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
 
-/* Header */
-header {
-  text-align: center;
-  padding: 30px 0 10px;
-  font-size: 36px;
-  font-weight: bold;
-  text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
-  color: rgb(62, 161, 194);
-}
+    .nice-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      box-shadow: 0 4px 12px rgba(150, 78, 78, 0.15);
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
 
-/* Java Logos */
-.java-logo-left, .java-logo-right {
-  position: absolute;
-  top: 80px;
-  width: 80px;
-  opacity: 0.8;
-  animation: colorChange 8s infinite alternate, float 6s ease-in-out infinite;
-  z-index: 5;
-}
+    .nice-table caption {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0f1011;
+      margin: 10px;
+      padding: 10px;
+    }
 
-.java-logo-left { left: 200px; }
-.java-logo-right { right: 17px; }
+    .nice-table th, .nice-table td {
+      border: 1px solid #e0e0e0;
+      padding: 15px;
+      text-align: center;
+      transition: background 0.3s;
+    }
 
-/* Animations */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
+    .nice-table th {
+      background-color: #333;
+      color: white;
+      font-size: 18px;
+    }
 
-@keyframes colorChange {
-  0% { filter: hue-rotate(0deg); }
-  50% { filter: hue-rotate(180deg); }
-  100% { filter: hue-rotate(360deg); }
-}
+    .nice-table tr:nth-child(even) td {
+      background-color: #f8f9fa;
+    }
 
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+    .nice-table td:hover {
+      background-color: #e3f2fd;
+    }
 
-@keyframes fadeInZoomBounce {
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
+    .nice-table a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .nice-table a:hover {
+      text-decoration: underline;
+    }
+
+    #pdfViewer {
+      width: 100%;
+      height: 1000px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      margin-top: 30px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+<table class="nice-table">
+  <caption>FS Java Slides</caption>
+  <tbody>
+    <tr>
+      <td><a href="/PPTS/CSS.pptx">CSS</a></td>
+      <td><a href="/PPTS/newHTML.pptx">HTML</a></td>
+      <td><a href="/PPTS/JavaScript.pptx">JavaScript</a></td>
+      <td><a href="/PPTS/newHTML.pptx">TypeScript</a></td>
+      <td><a href="/PPTS/JavaScript.pptx">Angular</a></td>
+    </tr>
+    <tr>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/Java Basic(Intro).pdf')">Java Basic</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/LangFund.pdf')">Language Fundamentals</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/Operator.pdf')">Operators</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/ControlStatements.pdf')">Control Statements</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/Arrays.pdf')">Arrays</a></td>
+    </tr>
+    <tr>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/Introduction-to-OOPS.pdf')">Intro to OOP</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/ClassObject.pdf')">Class & Object</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/Constructor.pdf')">Constructor</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/this-keyword.pdf')">this keyword</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/final-keyword.pdf')">final keyword</a></td>
+    </tr>
+    <tr>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/Inheritance.pdf')">Inheritance</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/AbstractClass.pdf')">Abstract Class</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/Interface.pdf')">Interface</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/InnerClass.pdf')">Inner Class</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/Exception.pdf')">Exception Handling</a></td>
+    </tr>
+    <tr>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/Thread.pdf')">Thread</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/GarbageCollection.pdf')">Garbage Collection</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/Java IO.pdf')">Java IO</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/Lang Package.pdf')">Lang Package</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/Util Package.pdf')">Util Package</a></td>
+    </tr>
+    <tr>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/Collection.pdf')">Collection</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/Java 5 Features.pdf')">Java 5 Features</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/Junit.pdf')">Junit (Not Available)</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/JDBC.pdf')">JDBC</a></td>
+      <td><a href="#" onclick="loadPDF('PPTS/Core Java/SQL.pdf')">SQL</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="pdfViewer">
+  <iframe id="viewerFrame" src=""></iframe>
+</div>
+
+<script>
+  function loadPDF(pdfPath) {
+    document.getElementById("viewerFrame").src = pdfPath + "#toolbar=0&navpanes=0&scrollbar=0";
+    document.getElementById("pdfViewer").scrollIntoView({ behavior: "smooth" });
   }
-}
+</script>
 
-@keyframes textColorChange {
-  0% { color: #ff4b5c; }
-  20% { color: #ffb400; }
-  40% { color: #4cd137; }
-  60% { color: #00a8ff; }
-  80% { color: #9c88ff; }
-  100% { color: #ff4b5c; }
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-/* Container & Sidebar */
-.container {
-  flex: 1;
-  display: flex;
-}
-
-.sidebar {
-  width: 250px;
-  background: #333;
-  padding-top: 30px;
-  position: fixed;
-  height: calc(100vh - 60px);
-  overflow-y: auto;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  padding: 15px;
-  text-align: center;
-}
-
-.sidebar ul li a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  display: block;
-  transition: background 0.3s;
-}
-
-.sidebar ul li a:hover {
-  background: #0a66c2;
-}
-
-/* Right Content */
-.right-content {
-  flex: 1;
-  margin-left: -50px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  height: calc(100vh - 60px);
-  overflow-y: auto;
-}
-
-/* Technologies Section */
-.technologies-container {
-  position: relative;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 40px auto;
-  padding: 40px 20px;
-  border-radius: 20px;
-  width: 300%;
-  max-width: 1000px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-}
-
-.technologies-container h1 {
-  margin-bottom: 30px;
-  font-size: 28px;
-  text-align: center;
-  color: #fff;
-}
-
-.technologies-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-}
-
-.technologies-list li {
-  background: rgba(255,255,255,0.15);
-  padding: 12px 24px;
-  border-radius: 12px;
-  min-width: 130px;
-  text-align: center;
-  font-size: 20px;
-  opacity: 0;
-  transform: scale(0.8) translateY(30px);
-  animation: fadeInZoomBounce 1s forwards, textColorChange 6s infinite linear, float 5s ease-in-out infinite;
-  animation-delay: calc(0.15s * var(--i)), 0s, 0s;
-  transition: transform 0.3s;
-}
-
-.technologies-list li:hover {
-  transform: scale(1.1) translateY(-5px);
-  background: rgba(255, 255, 255, 0.3);
-}
-
-/* Navbar */
-.navbar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #333;
-  width: 200px;
-  padding: 20px;
-  height: 100vh;
-}
-
-.navbar a {
-  margin-bottom: 20px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-icon {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.navbar a:hover .nav-icon {
-  transform: scale(1.2);
-  filter: brightness(1.4);
-}
-
-/* Marquee */
-.head {
-  overflow: hidden;
-  white-space: nowrap;
-  width: 100%;
-  background: #333;
-  padding: 50px 0;
-  font-size: 36px;
-  text-align: center;
-  font-weight: bold;
-}
-
-.marquee {
-  display: inline-block;
-  padding-left: 100%;
-  animation: scroll 40s linear infinite;
-  font-size: 24px;
-}
-
-.marquee:hover {
-  animation-play-state: paused;
-}
-
-.company {
-  font-weight: bold;
-  margin: 0 20px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 22px;
-  transition: color 0.5s ease;
-}
-
-.company:hover {
-  color: #ffffff;
-  text-shadow: 0 0 8px #ffffff;
-}
-
-/* Star Blink */
-.star {
-  color: #f4f4ec;
-  animation: blink 1.5s infinite;
-  margin: 0 10px;
-  font-size: 20px;
-}
-
-/* Center Content */
-.center-content {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.center-content img {
-  width: 150px;
-  height: 150px;
-}
-
-.center-content h1 {
-  color: #0a66c2;
-  margin-top: 15px;
-  font-size: 32px;
-}
-
-/* Scroll Content */
-.scroll-container {
-  width: 150%;
-  overflow-x: hidden;
-  position: relative;
-  margin: 30px 0;
-}
-
-.scroll-track {
-  display: flex;
-  gap: 20px;
-  width: max-content;
-  animation: scroll 50s linear infinite;
-}
-
-.scroll-container:hover .scroll-track {
-  animation-play-state: paused;
-}
-
-.memory {
-  flex: 0 0 auto;
-  text-align: center;
-}
-
-.memory img {
-  width: 250px;
-  height: auto;
-  border-radius: 18px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-
-.memory img:hover {
-  transform: scale(1.5);
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .container { flex-direction: column; }
-  .navbar { width: 100%; flex-direction: row; flex-wrap: wrap; }
-}
-
-@media (max-width: 600px) {
-  .navbar a { padding: 0.5rem; font-size: 1rem; }
-}
+</body>
+</html>
