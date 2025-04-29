@@ -208,12 +208,11 @@ body {
     }
 
     /* SCROLL STYLES */
-    .scroll-container {
-      width: 90%;
-      overflow-x: hidden;
-      position: relative;
-      margin: 30px 0;
-    }
+   .scroll-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 
     .scroll-track {
       display: flex;
@@ -238,7 +237,7 @@ body {
 
     /* Hover effect */
     .memory img:hover {
-      transform: scale(1.9);
+      transform: scale(1.1);
     }
 
     /* Keyframes for continuous scroll */
