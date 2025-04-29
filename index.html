@@ -1,123 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Java Technologies Showcase</title>
-  <link rel="stylesheet" href="css/style.css">
-
   <style>
-   
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    .page-header {
+      width: 100%;
+      background-color: #1e1e1e;
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+      padding: 3rem 3rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .main-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .main-layout {
+      display: flex;
+      flex: 1;
+      height: 100%;
+    }
+
+    .navbar {
+      width: 80px;
+      background-color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 40px;
+    }
+
+    .navbar a {
+      margin: 10px 0;
+      display: block;
+    }
+
+    .nav-icon {
+      width: 32px;
+      height: 32px;
+      filter: invert(1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+
+    .technologies-container {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      max-height: 100%;
+      overflow-y: auto;
+    }
+
+    .technologies-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      column-gap: 2rem;
+    }
+
+    .technologies-list li {
+      padding: 0.4rem 0;
+      font-size: 1rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
   </style>
 </head>
 <body>
-    <h1 class="head">
-      
-        
-      </h1>
+  <div class="main-wrapper">
+    <header class="page-header">
+      Java Technologies Showcase
+    </header>
 
-<!-- Main Content and Sidebar -->
-<div class="container">
-  <!-- Sidebar Navigation -->
-  <nav class="navbar">
-    <a onclick="loadPage('home')" title="Home">
-      <img src="https://cdn-icons-png.flaticon.com/512/1946/1946433.png" alt="Home" class="nav-icon">
-    </a>
-    <a onclick="loadPage('na')" title="About">
-      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="About" class="nav-icon">
-    </a>
-    <a onclick="loadPage('ns')" title="Slides">
-      <img src="https://cdn-icons-png.flaticon.com/512/29/29302.png" alt="Slides" class="nav-icon">
-    </a>
-    <a onclick="loadPage('nm')" title="Memories">
-      <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Memories" class="nav-icon">
-    </a>
-    <a onclick="loadPage('nc')" title="Clients">
-      <img src="https://cdn-icons-png.flaticon.com/512/681/681801.png" alt="Clients" class="nav-icon">
-    </a>
-    
-    
-    <a onclick="loadPage('ncontact')" title="Contact">
-      <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Contact" class="nav-icon">
-    </a>
-  </nav>
+    <div class="main-layout">
+      <!-- Left Navigation -->
+      <nav class="navbar">
+        <a onclick="loadPage('home')" title="Home">
+          <img src="https://cdn-icons-png.flaticon.com/512/1946/1946433.png" alt="Home" class="nav-icon" />
+        </a>
+        <a onclick="loadPage('na')" title="About">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="About" class="nav-icon" />
+        </a>
+        <a onclick="loadPage('ns')" title="Slides">
+          <img src="https://cdn-icons-png.flaticon.com/512/29/29302.png" alt="Slides" class="nav-icon" />
+        </a>
+        <a onclick="loadPage('nm')" title="Memories">
+          <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Memories" class="nav-icon" />
+        </a>
+        <a onclick="loadPage('nc')" title="Clients">
+          <img src="https://cdn-icons-png.flaticon.com/512/681/681801.png" alt="Clients" class="nav-icon" />
+        </a>
+        <a onclick="loadPage('ncontact')" title="Contact">
+          <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Contact" class="nav-icon" />
+        </a>
+      </nav>
 
-  <!-- Right Side Content -->
-  <div class="right-content" id="content">
-<!-- Background bubbles -->
-<div class="circle small"></div>
-<div class="circle medium"></div>
-<div class="circle large"></div>
-<div class="circle medium"></div>
-
-<header class="hr">
-  Java Technologies Showcase
-</header>
-
-<!-- Java Logos -->
-<img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java Logo Left" class="java-logo-left">
-<img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java Logo Right" class="java-logo-right">
-
-<main>
-  <div class="technologies-container">
-    <ul class="technologies-list">
-      <li style="--i:1">Spring</li>
-      <li style="--i:2">Hibernate</li>
-      <li style="--i:3">JavaFX</li>
-      <li style="--i:4">JDBC</li>
-      <li style="--i:5">JPA</li>
-      <li style="--i:6">Apache Maven</li>
-      <li style="--i:7">JMS</li>
-      <li style="--i:8">JSP</li>
-      <li style="--i:9">Java EE</li>
-      <li style="--i:10">Tomcat</li>
-      <li style="--i:13">Gradle</li>
-      <li style="--i:16">Docker</li>
-      <li style="--i:16">Pega</li>
-
-      <li style="--i:17">Kubernetes</li>
-      <li style="--i:19">AWS SDK</li>
-      <li style="--i:20">Oracle DB</li>
-      <li style="--i:21">Spring Boot</li>
-      <li style="--i:22">Apache Kafka</li>
-      <li style="--i:23">Spring Security</li>
-      <li style="--i:24">Spring Cloud</li>
-      <li style="--i:25">GCP SDK</li>
-      <li style="--i:26">JUnit </li>
-      <li style="--i:27">Mockito</li>
-      <li style="--i:28">JavaFX</li>
-      <li style="--i:29">Vaadin</li>
-      <li style="--i:30">JMS (Java Messaging Service)</li>
-      <li style="--i:31">JBoss</li>
-      <li style="--i:32">Android SDK</li>
-      <li style="--i:33">Java 8</li>
-      <li style="--i:34">Spring Data</li>
-      <li style="--i:35">Spring Integration</li>
-      <li style="--i:37">Kafka Streams</li>
-      <li style="--i:38">AWS Lambda</li>
-      <li style="--i:39">Vert.x</li>
-      <li style="--i:40">Quarkus</li>
-      <li style="--i:41">MicroProfile</li>
-      <li style="--i:42">Java RMI</li>
-      <li style="--i:43">Swagger</li>
-      <li style="--i:45">Jackson</li>
-      <li style="--i:46">JPA (Java Persistence API)</li>
-      <li style="--i:47">Cassandra</li>
-      <li style="--i:48">MongoDB</li>
-      <li style="--i:49">Spring Data JPA</li>
-      <li style="--i:50">JDBC Template</li>
-    </ul>
+      <!-- Main Content -->
+      <div class="main-content" id="content">
+        <div class="technologies-container">
+          <ul class="technologies-list">
+            <li>Spring</li>
+            <li>Hibernate</li>
+            <li>JavaFX</li>
+            <li>JDBC</li>
+            <li>JPA</li>
+            <li>Apache Maven</li>
+            <li>JMS</li>
+            <li>JSP</li>
+            <li>Java EE</li>
+            <li>Tomcat</li>
+            <li>Gradle</li>
+            <li>Docker</li>
+            <li>Pega</li>
+            <li>Kubernetes</li>
+            <li>AWS SDK</li>
+            <li>Oracle DB</li>
+            <li>Spring Boot</li>
+            <li>Apache Kafka</li>
+            <li>Spring Security</li>
+            <li>Spring Cloud</li>
+            <li>GCP SDK</li>
+            <li>JUnit</li>
+            <li>Mockito</li>
+            <li>Vaadin</li>
+            <li>JBoss</li>
+            <li>Android SDK</li>
+            <li>Java 8</li>
+            <li>Spring Data</li>
+            <li>Spring Integration</li>
+            <li>Kafka Streams</li>
+            <li>AWS Lambda</li>
+            <li>Vert.x</li>
+            <li>Quarkus</li>
+            <li>MicroProfile</li>
+            <li>Java RMI</li>
+            <li>Swagger</li>
+            <li>Jackson</li>
+            <li>Cassandra</li>
+            <li>MongoDB</li>
+            <li>Spring Data JPA</li>
+            <li>JDBC Template</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-</main>  </div>
-</div>
 
-<script>
-  function loadPage(page) {
-    const content = document.getElementById("content");
-    content.innerHTML = `<iframe src="${page}.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>`;
-  }
-</script>
-
-
+  <script>
+    function loadPage(page) {
+      const content = document.getElementById("content");
+      content.innerHTML = `<iframe src="${page}.html"></iframe>`;
+    }
+  </script>
 </body>
 </html>
