@@ -232,3 +232,65 @@ footer {
 .nice-table a:hover {
   text-decoration: underline;
 }
+
+
+.scrolling-text, .head {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  background: #333;
+  padding: 50px 0;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+}
+.scrolling-text {
+  animation: scroll-left 10s linear infinite;
+}
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: marquee 40s linear infinite;
+  font-size: 24px;
+}
+.marquee:hover {
+  animation-play-state: paused;
+}
+@keyframes scroll-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.star {
+  color: #f4f4ec;
+  animation: blink 1.5s infinite;
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+/* Company Colors */
+.company {
+  font-weight: bold;
+  margin: 0 20px;
+  font-size: 22px;
+  transition: color 0.5s ease;
+}
+.color1 { color: #e6dfdf; }
+.color2 { color: #33ff57; }
+.color3 { color: #3357ff; }
+.color4 { color: #f39c12; }
+.color5 { color: #9b59b6; }
+.color6 { color: #e29ab2; }
+.color7 { color: #1abc9c; }
+.company:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #ffffff;
+}
