@@ -264,9 +264,10 @@ header {
 
 /* Scroll Content */
 .scroll-container {
-  overflow: hidden;
-  width: 100%;
+  width: 150%;
+  overflow-x: hidden;
   position: relative;
+  margin: 30px 0;
 }
 
 .scroll-track {
