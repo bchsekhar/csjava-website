@@ -230,25 +230,26 @@
       border: 10;
     }
 
-    .instruction {
+   .instruction {
       font-size: 18px;
       color: #fff;
       background-color: #444;
       padding: 10px;
       margin-bottom: 20px;
       border-radius: 5px;
-      animation: slideIn 1s ease-out;
       display: inline-block; /* Make sure it doesn't stretch the width of the page */
+      animation: blink 1.5s infinite; /* Blink animation */
     }
 
-    /* Animation to slide the instruction section */
-    @keyframes slideIn {
+    /* Animation for blinking effect */
+    @keyframes blink {
       0% {
-        transform: translateY(-30px); /* Start off above */
+        opacity: 1;
+      }
+      50% {
         opacity: 0;
       }
       100% {
-        transform: translateY(0); /* End at normal position */
         opacity: 1;
       }
     }
@@ -256,7 +257,7 @@
 </head>
 <body>
   <div class="instruction">
-    Hover over the links to see the PDF options. When you click a link, the corresponding PDF will open below this table.
+   <h4 align='center'> Hover over the links to see the PDF options. When you click a link, the corresponding PDF will open below this table.</h4>
   </div>
 
   <table class="nice-table">
