@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -143,4 +143,166 @@
 </script>
 
 </body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Slides | ChandraSekhar Baratam</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #333;
+      margin: 20px;
+    }
+
+    h6 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .nice-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      box-shadow: 0 4px 12px rgba(150, 78, 78, 0.15);
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .nice-table caption {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0f1011;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    .nice-table th, .nice-table td {
+      border: 1px solid #e0e0e0;
+      padding: 15px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    .nice-table th {
+      background-color: #333;
+      color: white;
+      font-size: 18px;
+    }
+
+    .nice-table tr:nth-child(even) td {
+      background-color: #f8f9fa;
+    }
+
+    .nice-table td:hover {
+      background-color: #e3f2fd;
+    }
+
+    .nice-table a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .nice-table a:hover {
+      text-decoration: underline;
+    }
+
+    #pdfViewer {
+      width: 100%;
+      height: 1000px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      margin-top: 30px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 10;
+    }
+
+    .instruction {
+      font-size: 18px;
+      color: #fff;
+      background-color: #444;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="instruction">
+    Hover over the links to see the PDF options. When you click a link, the corresponding PDF will open below this table.
+  </div>
+
+  <table class="nice-table">
+    <tbody>
+      <tr>
+        <td><a href="/PPTS/CSS.pptx" title="Click to open the CSS PDF">CSS</a></td>
+        <td><a href="/PPTS/newHTML.pptx" title="Click to open the HTML PDF">HTML</a></td>
+        <td><a href="/PPTS/JavaScript.pptx" title="Click to open the JavaScript PDF">JavaScript</a></td>
+        <td><a href="/PPTS/newHTML.pptx" title="Click to open the TypeScript PDF">TypeScript</a></td>
+        <td><a href="/PPTS/JavaScript.pptx" title="Click to open the Angular PDF">Angular</a></td>
+      </tr>
+      <tr>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/Java Basic(Intro).pdf')" title="Click to open the Java Basic PDF">Java Basic</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/LangFund.pdf')" title="Click to open the Language Fundamentals PDF">Language Fundamentals</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/Operator.pdf')" title="Click to open the Operators PDF">Operators</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/ControlStatements.pdf')" title="Click to open the Control Statements PDF">Control Statements</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/Arrays.pdf')" title="Click to open the Arrays PDF">Arrays</a></td>
+      </tr>
+      <tr>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/Introduction-to-OOPS.pdf')" title="Click to open the Intro to OOP PDF">Intro to OOP</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/ClassObject.pdf')" title="Click to open the Class & Object PDF">Class & Object</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/Constructor.pdf')" title="Click to open the Constructor PDF">Constructor</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/this-keyword.pdf')" title="Click to open the this keyword PDF">this keyword</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/final-keyword.pdf')" title="Click to open the final keyword PDF">final keyword</a></td>
+      </tr>
+      <tr>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/Inheritance.pdf')" title="Click to open the Inheritance PDF">Inheritance</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/AbstractClass.pdf')" title="Click to open the Abstract Class PDF">Abstract Class</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/Interface.pdf')" title="Click to open the Interface PDF">Interface</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/InnerClass.pdf')" title="Click to open the Inner Class PDF">Inner Class</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/Exception.pdf')" title="Click to open the Exception Handling PDF">Exception Handling</a></td>
+      </tr>
+      <tr>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/Thread.pdf')" title="Click to open the Thread PDF">Thread</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/GarbageCollection.pdf')" title="Click to open the Garbage Collection PDF">Garbage Collection</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/Java IO.pdf')" title="Click to open the Java IO PDF">Java IO</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/Lang Package.pdf')" title="Click to open the Lang Package PDF">Lang Package</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/Util Package.pdf')" title="Click to open the Util Package PDF">Util Package</a></td>
+      </tr>
+      <tr>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/Collection.pdf')" title="Click to open the Collection PDF">Collection</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/Java 5 Features.pdf')" title="Click to open the Java 5 Features PDF">Java 5 Features</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/Junit.pdf')" title="Click to open the Junit PDF">Junit (Not Available)</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/JDBC.pdf')" title="Click to open the JDBC PDF">JDBC</a></td>
+        <td><a href="#" onclick="loadPDF('PPTS/Core Java/SQL.pdf')" title="Click to open the SQL PDF">SQL</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div id="pdfViewer">
+    <iframe id="viewerFrame" src=""></iframe>
+  </div>
+
+  <script>
+    function loadPDF(pdfPath) {
+      document.getElementById("viewerFrame").src = pdfPath + "#toolbar=0&navpanes=0&scrollbar=0";
+      document.getElementById("pdfViewer").scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+
+</body>
 </html>
+
